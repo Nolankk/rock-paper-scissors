@@ -8,6 +8,7 @@ const displayPlayerScore = document.getElementById('playerScore');
 const modal = document.getElementById('myModal');
 const span = document.getElementsByClassName("close")[0];
 const playAgain = document.getElementById('playAgain');
+const displayModal = document.getElementById('displayModal');
 
 // Return a random value from 'rps' array
 function computerPlay() {
@@ -16,6 +17,13 @@ function computerPlay() {
 
 function endGame() {
     if (playerScore >= 5 || computerScore >= 5) {
+        if (playerScore > computerScore) {
+            displayModal.textContent = 'You win!';
+        }
+        else {
+            displayModal.textContent = 'You lose!';
+        }
+
         modal.style.display = 'block';
 
         span.onclick = function() {
